@@ -1,0 +1,23 @@
+# Mac
+.DS_Store
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# IDEA
+.idea/
+*.iml
+
+# Maven
+target/
+
+# TestNG
+test-output/
+
+# Test framework
+src/main/resources/config.properties
+
+# Drivers
+drivers/

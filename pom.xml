@@ -1,0 +1,105 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>com.dhtlee</groupId>
+    <artifactId>ui-test-framework-java</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <name>labrador</name>
+    <url>http://maven.apache.org</url>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.seleniumhq.selenium</groupId>
+            <artifactId>selenium-java</artifactId>
+            <version>3.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.testng</groupId>
+            <artifactId>testng</artifactId>
+            <version>6.11</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hamcrest</groupId>
+            <artifactId>hamcrest-core</artifactId>
+            <version>1.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.shazam</groupId>
+            <artifactId>shazamcrest</artifactId>
+            <version>0.11</version>
+        </dependency>
+    </dependencies>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>21.0</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.19.1</version>
+                <configuration>
+                    <suiteXmlFiles>
+                        <suiteXmlFile>testsuites/${suiteXmlFile}</suiteXmlFile>
+                    </suiteXmlFiles>
+                    <systemPropertyVariables>
+                        <jAppUrl>${env.app.url}</jAppUrl>
+                        <jGridUrl>${env.grid.url}</jGridUrl>
+                        <jTestExecutionEnv>${env.test.execution.env}</jTestExecutionEnv>
+                        <jTestBrowser>${env.test.browser}</jTestBrowser>
+                        <jBsUsername>${env.browserstack.username}</jBsUsername>
+                        <jBsApiKey>${env.browserstack.api.key}</jBsApiKey>
+                        <jBsBrowserVersion>${env.browserstack.browser.version}</jBsBrowserVersion>
+                        <jBsBrowserResolution>${env.browserstack.browser.resolution}</jBsBrowserResolution>
+                        <jBsOS>${env.browserstack.os}</jBsOS>
+                        <jBsOSVersion>${env.browserstack.os.version}</jBsOSVersion>
+                        <jSlUsername>${env.sauceusername}</jSlUsername>
+                        <jSlApiKey>${env.sauceapikey}</jSlApiKey>
+                        <jSlBrowserVersion>${env.saucelabs.browser.version}</jSlBrowserVersion>
+                        <jSlOS>${env.saucelabs.os}</jSlOS>
+                        <jSlOSVersion>${env.saucelabs.os.version}</jSlOSVersion>
+                    </systemPropertyVariables>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>download-drivers</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>com.github.webdriverextensions</groupId>
+                        <artifactId>webdriverextensions-maven-plugin</artifactId>
+                        <version>3.1.0</version>
+                        <executions>
+                            <execution>
+                                <goals>
+                                    <goal>install-drivers</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+</project>
