@@ -23,7 +23,7 @@ public abstract class BasePage {
     this.wait = new Wait(driver, Configuration.DEFAULT_WAIT_TIME_ELEMENT);
     PageFactory.initElements(driver, this);
 
-    // Firefox not able to get console logs - https://github.com/seleniumhq/selenium/issues/1161
+    // No log implementation for Geckodriver - https://github.com/mozilla/geckodriver/issues/330
     if (!Configuration.BROWSER.equals("firefox")) {
       checkJavascriptErrors();
     }
