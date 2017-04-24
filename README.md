@@ -9,6 +9,10 @@ This is the Java version of boilerplate code for UI test framework using Seleniu
 Framework can be extended according to your needs. Other versions:
 - [Husky](https://github.com/dhtlee/husky) - Javascript ES6 with WebdriverJS (Selenium)
 
+### Resources
+- [Selenium-Java](https://seleniumhq.github.io/selenium/docs/api/java/)
+- [TestNG](http://testng.org/)
+
 ### Pre-requisite
 - Git
 - JDK 1.8+
