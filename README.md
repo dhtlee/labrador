@@ -14,9 +14,9 @@ Framework can be extended according to your needs. Other versions:
 - [TestNG](http://testng.org/)
 
 ### Pre-requisite
-- Git
-- JDK 1.8+
-- Maven 3.3.9+
+- [Git](https://git-scm.com)
+- [JDK 1.8+](http://www.oracle.com/technetwork/java/javase/downloads)
+- [Maven 3.3.9+](https://maven.apache.org)
 
 ### Setting up environment
 1. Clone this repo
@@ -28,9 +28,9 @@ Framework can be extended according to your needs. Other versions:
 1. Update configuration values in config.properties where needed
 
 ### Running the demo tests
-- To execute entire TestNG regression test suite: Note: There will be 1 test that passes and 1 that fails
+- Execute demo TestNG **regression** test suite: Note: There will be 1 test that passes and 1 that fails
 <br>`mvn clean test -DsuiteXmlFile=regression.xml` 
-- To view test report, open _target/surefire-reports/index.html_ in a browser, navigate to 'Reporter Output'
+- View test report, open _target/surefire-reports/index.html_ in a browser, navigate to 'Reporter Output'
 
 ### Parallel test execution
 - Update **thread-count** value in the test suites xml
