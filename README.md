@@ -25,12 +25,12 @@ Framework can be extended according to your needs. Other versions:
 1. Download latest drivers (Note: drivers will be downloaded to _<project_root_dir>/drivers_)
 <br>`mvn clean compile -P download-drivers`
 1. Create a local copy of **config.properties** from config-template.properties in _src/main/resources_
-1. Update configuration values in config.properties where needed
+1. Update driver path and other configuration values in config.properties where needed
 
 ### Running the demo tests
 - Execute demo TestNG **regression** test suite: Note: There will be 1 test that passes and 1 that fails
 <br>`mvn clean test -DsuiteXmlFile=regression.xml` 
-- View test report, open _target/surefire-reports/index.html_ in a browser, navigate to 'Reporter Output'
+- To view test report, open _target/surefire-reports/index.html_ in a browser, navigate to 'Reporter Output'
 
 ### Parallel test execution
 - Update **thread-count** value in the test suites xml
